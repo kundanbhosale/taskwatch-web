@@ -5,6 +5,7 @@ import Footer from '@/components/footer '
 import { Metadata } from 'next'
 import configuration from '@/configuration '
 import ProgressBar from '@/components/progressBar '
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -61,6 +62,24 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
+
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=G-WNZ705MDJ4`}
+        strategy='afterInteractive'
+      />
+      <Script
+        id='google-analytics'
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){window.dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', G-WNZ705MDJ4,{
+                                page_path: window.location.pathname});`,
+        }}
+      />
       <body className={`${inter.className} flex min-h-screen flex-col`}>
         <Header />
         <ProgressBar />
