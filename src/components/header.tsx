@@ -19,20 +19,28 @@ const Header = () => {
       >
         <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between'>
           <Link href='/' className=' flex items-center' passHref>
-            <span>
-              <Image
-                src={
-                  width > 768
-                    ? '/images/logo.png'
-                    : '/images/favicon/android-chrome-192x192.png'
-                }
-                alt={'logo of taskwatch.io'}
-                title={configuration.site.name}
-                width={width > 768 ? 175 : 35}
-                height={width > 768 ? 50 : 35}
-                priority={true}
-                placeholder='empty'
-              />
+            <span
+              className='relative'
+              style={{
+                width: width > 768 ? '175px' : '35px',
+                height: width > 768 ? '50px' : '35px',
+              }}
+            >
+              {width ? (
+                <Image
+                  src={
+                    width > 768
+                      ? '/images/logo.png'
+                      : '/images/favicon/android-chrome-192x192.png'
+                  }
+                  alt={'logo of taskwatch.io'}
+                  title={configuration.site.name}
+                  width={width > 768 ? 175 : 35}
+                  height={width > 768 ? 50 : 35}
+                  priority={true}
+                  placeholder='empty'
+                />
+              ) : null}
             </span>
           </Link>
           <div className='flex-between  flex items-center gap-x-8'>
