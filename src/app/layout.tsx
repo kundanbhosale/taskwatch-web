@@ -56,6 +56,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
+        <link
+          rel='image_src'
+          href={`${configuration.site.siteUrl}/images/favicon/icon-192x192.png`}
+        />
+
         <script
           key='ld:json'
           type='application/ld+json'
