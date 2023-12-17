@@ -45,7 +45,7 @@ const FeatureSection = () => {
             </h4>
             {item.comming_soon && (
               <span className='mb-2  w-fit rounded-full px-2 py-1 text-xs font-medium text-primary-700 ring-2 ring-primary-300'>
-                Comming Soon
+                Coming Soon
               </span>
             )}
             <p className='text-sm font-medium text-gray-700'>
